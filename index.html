@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>E-Money Earning Tool - Home</title>
-    
+
     <style>
-        html, body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
             height: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Disable scroll bars */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,13 +23,13 @@
         }
 
         .container {
-            width: 1200px;
-            height: 1000px;
+            width: 1200px;  /* Full width */
+            height: 1000px; /* Full height */
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
             display: flex;
             flex-direction: column;
+            position: relative; /* For absolute positioning of child elements */
         }
 
         header {
@@ -34,8 +38,7 @@
             padding: 1rem;
             text-align: center;
             font-size: 2rem;
-            position: relative;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Prevent header from shrinking */
         }
 
         .login-btn {
@@ -60,7 +63,7 @@
             display: flex;
             justify-content: center;
             background-color: #333;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Prevent nav from shrinking */
         }
 
         nav a {
@@ -77,15 +80,16 @@
         }
 
         .hero {
-            background-image: url('background.png');
+            background-image: url('background.png'); /* Replace with your image path */
             background-size: cover;
             background-position: center;
-            flex: 1;
+            flex: 1; /* Allow this section to take available space */
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            flex-shrink: 0; /* Prevent hero section from shrinking */
         }
 
         .hero h1 {
@@ -95,7 +99,7 @@
 
         main {
             padding: 2rem;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Prevent main section from shrinking */
         }
 
         .content-section {
@@ -125,7 +129,7 @@
             color: white;
             text-align: center;
             padding: 1rem;
-            flex-shrink: 0;
+            flex-shrink: 0; /* Prevent footer from shrinking */
         }
 
         footer p {
@@ -194,7 +198,6 @@
                 <button class="signup-btn" onclick="window.location.href='signup.html'">Get Signup Bonus</button>
                 <button class="daily-bonus-btn">Claim Daily Bonus</button>
             </section>
-
         </main>
 
         <!-- Footer Section -->
