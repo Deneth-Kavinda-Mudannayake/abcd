@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home Page</title>
+    <title>E-Money Earning Tool - Home</title>
     
     <style>
         /* General body styling */
@@ -22,6 +22,26 @@
             padding: 1rem;
             text-align: center;
             font-size: 2rem;
+            position: relative;
+        }
+
+        /* Login button styling in the header */
+        .login-btn {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            background-color: white;
+            color: #4CAF50;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background-color: #333;
+            color: white;
         }
 
         /* Navigation bar styling */
@@ -59,6 +79,7 @@
 
         .hero h1 {
             font-size: 3rem;
+            text-align: center;
         }
 
         /* Main content styling */
@@ -81,6 +102,20 @@
             color: #333;
         }
 
+        /* Features list */
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            background-color: #e8f5e9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+
         /* Footer styling */
         footer {
             background-color: #333;
@@ -95,13 +130,30 @@
         footer p {
             margin: 0;
         }
+
+        /* Button styling for signup and daily bonus */
+        .signup-btn, .daily-bonus-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .signup-btn:hover, .daily-bonus-btn:hover {
+            background-color: #333;
+        }
     </style>
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
-        Welcome to Your Home Page
+        Welcome to E-Money Earning Tool
+        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
     </header>
 
     <!-- Navigation Bar -->
@@ -114,7 +166,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Make Your Online Presence Shine</h1>
+        <h1>Earn Money by Watching YouTube Videos and Playing Games</h1>
     </section>
 
     <!-- Main Content -->
@@ -122,29 +174,38 @@
         <section class="content-section" id="about">
             <h2>About Us</h2>
             <p>
-                We provide cutting-edge solutions to help you maximize your potential in the digital world.
-                Our services range from web development to online marketing, ensuring your business stands out.
+                Our platform allows you to earn money from the comfort of your home by engaging with online activities such as watching YouTube videos and playing exciting games.
             </p>
         </section>
 
         <section class="content-section" id="services">
-            <h2>Our Services</h2>
-            <p>
-                Whether you're looking to build a website, optimize for SEO, or engage with your audience on social media, we have the expertise to help you succeed.
-            </p>
+            <h2>Features</h2>
+            <ul class="features-list">
+                <li>💰 Earn money by watching YouTube videos</li>
+                <li>🎮 Play games like Crash and Dice to win more</li>
+                <li>🎁 Receive a signup bonus upon joining</li>
+                <li>🎉 Claim daily bonuses for extra rewards</li>
+            </ul>
+        </section>
+
+        <!-- Signup Bonus and Daily Bonus -->
+        <section class="content-section" id="bonuses">
+            <h2>Sign-Up Bonus & Daily Bonus</h2>
+            <button class="signup-btn" onclick="window.location.href='signup.html'">Get Signup Bonus</button>
+            <button class="daily-bonus-btn">Claim Daily Bonus</button>
         </section>
 
         <section class="content-section" id="contact">
             <h2>Contact Us</h2>
             <p>
-                Reach out to us for a consultation or any questions you may have. We're here to help you grow your digital footprint.
+                Have any questions? Reach out to us and we’ll help you get started on your e-money journey.
             </p>
         </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 E-Money Earning Tool. All rights reserved.</p>
     </footer>
 
 </body>
