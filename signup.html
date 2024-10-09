@@ -2,59 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
+        form {
+            background-color: white;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
         input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
         button {
-            padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #4CAF50;
             color: white;
+            padding: 10px;
             border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
         button:hover {
-            background-color: #0056b3;
-        }
-        a {
-            text-decoration: none;
-            color: #007bff;
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+
+    <form id="signupForm">
         <h2>Sign Up</h2>
-        <form action="/signup" method="POST">
-            <input type="text" name="fullname" placeholder="Full Name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="text" name="address" placeholder="Address" required>
-            <input type="text" name="country" placeholder="Country" required>
-            <input type="date" name="birthday" placeholder="Birthday" required>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login.html">Login</a></p>
-    </div>
+        <input type="text" id="name" placeholder="Name" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <input type="text" id="phone" placeholder="Phone Number" required><br>
+        <button type="button" onclick="submitForm()">Sign Up</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let phone = document.getElementById('phone').value;
+
+            // Make sure all fields are filled
+            if (name && email && password && phone) {
+                // Send data to the server using a simple fetch request
+                fetch('http://localhost:8080/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        password: password,
+                        phone: phone
+                    })
+                }).then(response => response.text())
+                  .then(data => alert(data))  // Show a success message
+                  .catch(error => console.error('Error:', error));
+            } else {
+                alert('All fields are required.');
+            }
+        }
+    </script>
+
 </body>
 </html>
